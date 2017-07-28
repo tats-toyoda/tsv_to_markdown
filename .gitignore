@@ -1,0 +1,18 @@
+# .md ファイルを無視
+*.md
+
+# .csv ファイルを無視
+*.csv
+
+# .tsv ファイルを無視
+*.tsv
+
+# .swp ファイルを無視
+*.swp
+
+# input ディレクトリを無視
+/input/*
+
+# output ディレクトリを無視
+/output/*
+
