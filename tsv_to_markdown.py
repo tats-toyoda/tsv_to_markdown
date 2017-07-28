@@ -10,6 +10,13 @@ from copy import deepcopy
 
 # In[ ]:
 
+l = input().split()
+input_file = 'input/' + l[2]
+output_file = 'output/' + l[3]
+
+
+# In[ ]:
+
 def insert(list_input):
     """
     listの先頭と末尾に空の要素を追加する.
@@ -24,7 +31,7 @@ def insert(list_input):
 # In[ ]:
 
 list_ = []
-with open('input/df_proto.tsv') as f_open:
+with open(input_file) as f_open:
     tsv_reader = csv.reader(f_open, delimiter='\t')
     fieldname = tsv_reader.__next__()
     column_length = len(fieldname)
@@ -39,7 +46,7 @@ with open('input/df_proto.tsv') as f_open:
 
 # In[ ]:
 
-with open('output/df_proto.dat', 'w') as f_write:
+with open(output_file, 'w') as f_write:
     markdown_writer = csv.writer(f_write, delimiter='|', lineterminator='\n')
     markdown_writer.writerow(insert(fieldname))
     for row in list_:
