@@ -1,21 +1,20 @@
-# .md ファイルを無視
-*.md
-
-# .csv ファイルを無視
+# .csv files
 *.csv
 
-# .dat ファイルを無視
+# .dat files
 *.dat
 
-# .tsv ファイルを無視
+# .tsv files
 *.tsv
 
-# .swp ファイルを無視
+# swap files
 *.swp
 
-# input ディレクトリを無視
+# input directory
 /input/*
 
-# output ディレクトリを無視
+# output directory
 /output/*
 
+# Jupyter Notebook
+.ipynb_checkpoints
