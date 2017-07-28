@@ -5,14 +5,17 @@
 
 
 import csv
+import sys
 from copy import deepcopy
 
 
 # In[ ]:
 
-l = input().split()
-input_file = 'input/' + l[2]
-output_file = 'output/' + l[3]
+argvs = sys.argv
+input_file = argvs[1]
+output_file = argvs[2]
+print('input file:', input_file)
+print('output file:', output_file)
 
 
 # In[ ]:
@@ -32,6 +35,7 @@ def insert(list_input):
 
 list_ = []
 with open(input_file) as f_open:
+    print('Reading input file...')
     tsv_reader = csv.reader(f_open, delimiter='\t')
     fieldname = tsv_reader.__next__()
     column_length = len(fieldname)
@@ -47,8 +51,10 @@ with open(input_file) as f_open:
 # In[ ]:
 
 with open(output_file, 'w') as f_write:
+    print('Writing output file...')
     markdown_writer = csv.writer(f_write, delimiter='|', lineterminator='\n')
     markdown_writer.writerow(insert(fieldname))
     for row in list_:
         markdown_writer.writerow(row)
+print('Done.')
 
